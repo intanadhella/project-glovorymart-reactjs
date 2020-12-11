@@ -37,3 +37,57 @@ code {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.zoom {
+    transition: all 0.2s;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.full-height {
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+    min-height: 100vh;
+}
+
+.come-from.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 400px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+.come-from.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 0px;
+}
+
+.come-from.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+.come-from.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+.come-from.right.fade.show .modal-dialog {
+    right: 0;
+}
+
+@media (max-width: 576px) {
+    .come-from.right .modal-dialog {
+        width: 100% !important;
+    }
+}
