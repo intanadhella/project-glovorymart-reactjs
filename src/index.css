@@ -96,8 +96,8 @@ code {
 }
 
 .display-keranjang {
-    height: 100%;
-    width: 20%;
+    max-height: 80px;
+    max-width: 80px;
 }
 .item-keranjang {
     width: 100%;

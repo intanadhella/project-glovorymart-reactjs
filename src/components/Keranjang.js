@@ -21,7 +21,7 @@ class Keranjang extends Component {
                 className="list-keranjang d-flex border-bottom py-3"
                 key={belanja.id}
             >
-                <div className="display-keranjang">
+                <div className="display-keranjang mr-3">
                     <img
                         src={this.props.getBarangById(belanja.id).gambar}
                         alt="Ketela"

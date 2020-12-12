@@ -5,6 +5,22 @@ import Keranjang from "./components/Keranjang";
 import Navigation from "./components/Navbar";
 import ketela from "./assets/images/ketela.png";
 import susu from "./assets/images/susu.jpeg";
+import lays from "./assets/images/lays.png";
+import oreo from "./assets/images/oreo.png";
+import tango from "./assets/images/tango.jpeg";
+import doritos from "./assets/images/doritos.jpeg";
+import oceana from "./assets/images/oceana.jpeg";
+import frisianflag from "./assets/images/frisianflag.jpeg";
+import bearbrand from "./assets/images/bearbrand.jpeg";
+import cheetos from "./assets/images/cheetos.jpeg";
+import bonnori from "./assets/images/bonnori.jpeg";
+import kanzler from "./assets/images/kanzler.jpeg";
+import popmie from "./assets/images/popmie.jpeg";
+import kitkat from "./assets/images/kitkat.jpeg";
+import silverqueen from "./assets/images/silverqueen.jpeg";
+import feast from "./assets/images/feast.jpeg";
+import populaire from "./assets/images/populaire.jpeg";
+import viennetta from "./assets/images/viennetta.jpeg";
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +31,7 @@ class App extends Component {
             daftarBarang: [
                 {
                     id: 1,
-                    namaBarang: "Qtela Tempe Cabai Rawit 55g",
+                    namaBarang: "Qtela Tempe Cabai Rawit 55gr",
                     harga: 7700,
                     gambar: ketela,
                 },
@@ -24,6 +40,103 @@ class App extends Component {
                     namaBarang: "Susu Fernleaf Full Cream 1kg",
                     harga: 156000,
                     gambar: susu,
+                },
+                {
+                    id: 3,
+                    namaBarang: "Lay's Nori Seaweed 68gr",
+                    harga: 15000,
+                    gambar: lays,
+                },
+                {
+                    id: 4,
+                    namaBarang: "Oreo Supreme",
+                    harga: 76000,
+                    gambar: oreo,
+                },
+                {
+                    id: 5,
+                    namaBarang: "Tango Wafer Long Chocolate 47gr x 10",
+                    harga: 20400,
+                    gambar: tango,
+                },
+                {
+                    id: 6,
+                    namaBarang: "Doritos Nacho Cheese 160gr - 3pcs",
+                    harga: 27000,
+                    gambar: doritos,
+                },
+                {
+                    id: 7,
+                    namaBarang: "Nu OCEANA Sea Salt Lemonade 460ml",
+                    harga: 8000,
+                    gambar: oceana,
+                },
+                {
+                    id: 8,
+                    namaBarang: "Frisian Flag Family UHT Swiss Chocolate 900ml",
+                    harga: 14500,
+                    gambar: frisianflag,
+                },
+                {
+                    id: 9,
+                    namaBarang: "Bear Brand RTD Milk Tin 189ml",
+                    harga: 10700,
+                    gambar: bearbrand,
+                },
+                {
+                    id: 10,
+                    namaBarang: "Cheetos Rasa Jagung Bakar 15gr",
+                    harga: 1000,
+                    gambar: cheetos,
+                },
+                {
+                    id: 11,
+                    namaBarang: "MamaSuka Bon Nori Spicy 60gr",
+                    harga: 21600,
+                    gambar: bonnori,
+                },
+                {
+                    id: 12,
+                    namaBarang: "Kanzler Sosis Singles Original 65gr",
+                    harga: 8500,
+                    gambar: kanzler,
+                },
+                {
+                    id: 13,
+                    namaBarang: "Pop Mie Kuah Rasa Ayam 75g",
+                    harga: 4600,
+                    gambar: popmie,
+                },
+                {
+                    id: 14,
+                    namaBarang: "Kit Kat Chunky 38g",
+                    harga: 10500,
+                    gambar: kitkat,
+                },
+                {
+                    id: 15,
+                    namaBarang:
+                        "Silver Queen Chocolate Chunky Bar Cashew 100gr",
+                    harga: 18000,
+                    gambar: silverqueen,
+                },
+                {
+                    id: 16,
+                    namaBarang: "Walls Feast Vanilla",
+                    harga: 5000,
+                    gambar: feast,
+                },
+                {
+                    id: 17,
+                    namaBarang: "Walls Populaire Chocolate Vanilla 90ml",
+                    harga: 5000,
+                    gambar: populaire,
+                },
+                {
+                    id: 18,
+                    namaBarang: "Walls Viennetta 800ml",
+                    harga: 79000,
+                    gambar: viennetta,
                 },
             ],
             daftarBelanja: [],
@@ -75,8 +188,8 @@ class App extends Component {
             this.setState({
                 daftarBelanja: keranjang,
             });
-        }else{
-            this.hapusItem(id)
+        } else {
+            this.hapusItem(id);
         }
     };
 
