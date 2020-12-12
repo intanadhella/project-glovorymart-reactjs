@@ -12,15 +12,14 @@ code {
         monospace;
 }
 
-.foto-makanan {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 .display-foto {
     height: 130px;
     width: 100%;
+}
+.item-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .one-line {
@@ -31,7 +30,7 @@ code {
 
 .two-lines {
     display: -webkit-box;
-    height: 50px;
+    height: 38px;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -42,7 +41,6 @@ code {
     transition: all 0.2s;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
-
 .zoom:hover {
     transform: scale(1.05);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -68,31 +66,66 @@ code {
     -o-transform: translate3d(0%, 0, 0);
     transform: translate3d(0%, 0, 0);
 }
-
 .come-from.right .modal-content {
     height: 100%;
-    overflow-y: auto;
     border-radius: 0px;
     border: 0px;
 }
-
 .come-from.right .modal-body {
-    padding: 15px 15px 80px;
+    padding: 15px;
+    overflow-y: auto;
 }
-
 .come-from.right.fade .modal-dialog {
     right: -320px;
     -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
     -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
     transition: opacity 0.3s linear, right 0.3s ease-out;
+    overflow-y: initial !important;
 }
 .come-from.right.fade.show .modal-dialog {
     right: 0;
 }
 
+.btn-text-hitam {
+    color: #212529 !important;
+    border-color: #ced4da !important;
+}
+.btn-text-hitam:hover {
+    color: #fff !important;
+}
+
+.display-keranjang {
+    height: 100%;
+    width: 20%;
+}
+.item-keranjang {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.desc-keranjang {
+    width: 80%;
+}
+
+.keranjang-top {
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    width: 400px;
+}
+
+.keranjang-body {
+    top: 71px;
+    margin-bottom: 70px;
+}
+
 @media (max-width: 576px) {
     .come-from.right .modal-dialog {
         width: 100% !important;
+    }
+    .keranjang-top {
+        width: 100%;
     }
 }

@@ -21,7 +21,7 @@ class App extends Component {
                 },
                 {
                     id: 2,
-                    namaBarang: "Susu Fernleaf Full Cream",
+                    namaBarang: "Susu Fernleaf Full Cream 1kg",
                     harga: 156000,
                     gambar: susu,
                 },
@@ -55,6 +55,8 @@ class App extends Component {
                 <Keranjang
                     handleClose={this.handleClose}
                     showKeranjang={this.state.showKeranjang}
+                    daftarBarang={this.state.daftarBarang}
+                    daftarBelanja={this.state.daftarBelanja}
                 />
             </div>
         );
