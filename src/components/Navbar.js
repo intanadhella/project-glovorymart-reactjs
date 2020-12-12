@@ -5,7 +5,12 @@ import glovoryLogo from "../assets/images/icons/glovory.svg"
 class Navigation extends Component {
     render() {
         return (
-            <Navbar bg="white" variant="light" className="shadow" fixed="top">
+            <Navbar
+                bg="white"
+                variant="light"
+                className="shadow px-0"
+                fixed="top"
+            >
                 <Nav className="px-xl-5 px-lg-4 px-3 full-width mx-auto w-100 justify-content-between">
                     <Navbar.Brand href="#home">
                         <img
@@ -34,6 +39,12 @@ class Navigation extends Component {
                     </InputGroup>
 
                     <div className="d-inline-flex">
+                        <Button
+                            variant="light"
+                            className="d-block d-md-none nav-link px-3 mr-3"
+                        >
+                            <i className="fas fa-search"></i>
+                        </Button>
                         <Button
                             variant="light"
                             className="nav-link mr-3 px-3"
