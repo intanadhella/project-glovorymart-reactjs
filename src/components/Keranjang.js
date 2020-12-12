@@ -3,21 +3,15 @@ import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import NumberFormat from "react-number-format";
 
 class Keranjang extends Component {
-    getItem = (id) => {
-        const item = this.props.daftarBarang.filter(function (barang) {
-            return barang.id === id;
-        });
-        return item[0];
-    };
     getTotal = () => {
-        const subTotal = this.props.daftarBelanja.map((belanja) => {
-            belanja.harga = this.getItem(belanja.id).harga;
-            belanja.subTotal = belanja.jumlah * belanja.harga;
+        const total = this.props.daftarBelanja
+            .map((belanja) => {
+                belanja.harga = this.props.getBarangById(belanja.id).harga;
+                belanja.subTotal = belanja.jumlah * belanja.harga;
 
-            return belanja.subTotal;
-        });
-        
-        const total = subTotal.reduce((prev, curr) => prev + curr);
+                return belanja.subTotal;
+            })
+            .reduce((prev, curr) => prev + curr, 0);
 
         return total;
     };
@@ -29,7 +23,7 @@ class Keranjang extends Component {
             >
                 <div className="display-keranjang">
                     <img
-                        src={this.getItem(belanja.id).gambar}
+                        src={this.props.getBarangById(belanja.id).gambar}
                         alt="Ketela"
                         className="item-keranjang"
                     />
@@ -37,15 +31,28 @@ class Keranjang extends Component {
                 <div className="desc-keranjang">
                     <div className="desc-keranjang-1 d-flex justify-content-between mb-2">
                         <div className="title-keranjang my-auto h6">
-                            {this.getItem(belanja.id).namaBarang}
+                            {this.props.getBarangById(belanja.id).namaBarang}
                         </div>
-                        <Button variant="light" className="hapus-keranjang">
+                        <Button
+                            variant="light"
+                            className="hapus-keranjang"
+                            onClick={this.props.hapusItem.bind(
+                                this,
+                                belanja.id
+                            )}
+                        >
                             <i className="fas fa-trash-alt"></i>
                         </Button>
                     </div>
                     <div className="desc-keranjang-2 d-flex justify-content-between">
                         <InputGroup className="control-keranjang w-50">
-                            <Button variant="outline-danger btn-text-hitam">
+                            <Button
+                                variant="outline-danger btn-text-hitam"
+                                onClick={this.props.kurangItem.bind(
+                                    this,
+                                    belanja.id
+                                )}
+                            >
                                 -
                             </Button>
                             <FormControl
@@ -54,13 +61,21 @@ class Keranjang extends Component {
                                 className="border-0 text-center font-weight-bold bg-white"
                                 value={belanja.jumlah}
                             />
-                            <Button variant="outline-danger btn-text-hitam">
+                            <Button
+                                variant="outline-danger btn-text-hitam"
+                                onClick={this.props.tambahItem.bind(
+                                    this,
+                                    belanja.id
+                                )}
+                            >
                                 +
                             </Button>
                         </InputGroup>
                         <div className="price-keranjang my-auto font-weight-bold">
                             <NumberFormat
-                                value={this.getItem(belanja.id).harga}
+                                value={
+                                    this.props.getBarangById(belanja.id).harga
+                                }
                                 displayType={"text"}
                                 thousandSeparator={"."}
                                 decimalSeparator={","}
@@ -80,15 +95,24 @@ class Keranjang extends Component {
                             onHide={this.props.handleClose}
                             className={`come-from right`}
                         >
-                            <Modal.Header className="justify-content-start keranjang-top">
+                            <Modal.Header className="justify-content-between keranjang-top">
+                                <div className="d-flex">
+                                    <Button
+                                        variant="light"
+                                        className="mr-3 px-3"
+                                        onClick={this.props.handleClose}
+                                    >
+                                        <i className="fas fa-times"></i>
+                                    </Button>
+                                    <Modal.Title>Cart</Modal.Title>
+                                </div>
                                 <Button
                                     variant="light"
-                                    className="mr-3 px-3"
-                                    onClick={this.props.handleClose}
+                                    className="px-3"
+                                    onClick={this.props.hapusKeranjang}
                                 >
-                                    <i className="fas fa-times"></i>
+                                    Clear All
                                 </Button>
-                                <Modal.Title>Cart</Modal.Title>
                             </Modal.Header>
                             <Modal.Body className="keranjang-body py-0">
                                 {daftarBelanja}

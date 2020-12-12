@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
 import NumberFormat from "react-number-format";
+import { ToastContainer, toast } from "react-toastify";
 
 class Body extends Component {
+    addToCart = (id) => {
+        this.props.addToCart(id);
+        return toast("Added to cart.")
+    };
     render() {
         const daftarBarang = this.props.daftarBarang.map((barang) => (
             <Col xl={2} lg={3} md={4} sm={6} xs={6} key={barang.id}>
@@ -27,7 +32,7 @@ class Body extends Component {
                                 prefix={"Rp "}
                             />
                         </Card.Subtitle>
-                        <Button variant="danger" block>
+                        <Button variant="danger" block onClick={this.addToCart.bind(this, barang.id)}>
                             Add to Cart
                         </Button>
                     </Card.Body>
@@ -37,6 +42,7 @@ class Body extends Component {
         return (
             <div className="px-xl-5 px-lg-4 px-3 full-height">
                 <Row>{daftarBarang}</Row>
+                <ToastContainer autoClose={1000} />
             </div>
         );
     }

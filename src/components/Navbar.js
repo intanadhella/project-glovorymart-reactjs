@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Navbar, Nav, InputGroup, FormControl, Button} from "react-bootstrap";
+import {Navbar, Nav, InputGroup, FormControl, Button, Badge} from "react-bootstrap";
 import glovoryLogo from "../assets/images/icons/glovory.svg"
 
 class Navigation extends Component {
@@ -51,6 +51,9 @@ class Navigation extends Component {
                             onClick={this.props.handleShow}
                         >
                             <i className="fas fa-shopping-cart"></i>
+                            <Badge variant="danger">
+                                {this.props.countKeranjang()}
+                            </Badge>
                         </Button>
                         <Button variant="light" className="nav-link px-3">
                             <i className="fas fa-user-circle"></i>
