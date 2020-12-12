@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Keranjang from "./components/Keranjang";
 import Navigation from "./components/Navbar";
 import ketela from "./assets/images/ketela.png"
-import susu from "./assets/images/susu.png"
+import susu from "./assets/images/susu.jpeg"
 
 class App extends Component {
     constructor(props) {
@@ -15,15 +15,25 @@ class App extends Component {
             daftarBarang: [
                 {
                     id: 1,
-                    namaBarang: "Qtela Tempe",
-                    harga: 7000,
+                    namaBarang: "Qtela Tempe Cabai Rawit 55g",
+                    harga: 7700,
                     gambar: ketela,
                 },
                 {
                     id: 2,
-                    namaBarang: "Fernleaf Milk",
-                    harga: 54000,
+                    namaBarang: "Susu Fernleaf Full Cream",
+                    harga: 156000,
                     gambar: susu,
+                },
+            ],
+            daftarBelanja: [
+                {
+                    id: 2,
+                    jumlah: 5,
+                },
+                {
+                    id: 1,
+                    jumlah: 2,
                 },
             ],
         };

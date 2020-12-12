@@ -50,8 +50,12 @@ code {
 
 .full-height {
     padding-top: 7rem !important;
-    padding-bottom: 5rem !important;
+    padding-bottom: 4rem !important;
     min-height: 100vh;
+}
+
+.full-width {
+    max-width: 1440px;
 }
 
 .come-from.right .modal-dialog {
