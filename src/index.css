@@ -143,6 +143,10 @@ code {
     padding: 3px !important;
 }
 
+.Toastify__toast-container--top-right {
+    top: 5em !important;
+}
+
 @media (max-width: 576px) {
     .come-from.right .modal-dialog {
         width: 100% !important;
