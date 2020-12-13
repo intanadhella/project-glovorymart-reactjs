@@ -35,7 +35,7 @@ class Keranjang extends Component {
                         </div>
                         <Button
                             variant="light"
-                            className="hapus-keranjang"
+                            className="hapus-keranjang ml-3"
                             onClick={this.props.hapusItem.bind(
                                 this,
                                 belanja.id
