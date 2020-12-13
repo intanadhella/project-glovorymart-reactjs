@@ -96,8 +96,8 @@ code {
 }
 
 .display-keranjang {
-    max-height: 80px;
-    max-width: 80px;
+    max-height: 87px;
+    max-width: 87px;
 }
 .item-keranjang {
     width: 100%;
@@ -106,7 +106,7 @@ code {
 }
 
 .desc-keranjang {
-    width: 80%;
+    width: calc(100% - 80px);
 }
 
 .keranjang-top {
@@ -119,6 +119,10 @@ code {
 .keranjang-body {
     top: 71px;
     margin-bottom: 70px;
+}
+
+.list-keranjang {
+    height: 120px;
 }
 
 @media (max-width: 576px) {

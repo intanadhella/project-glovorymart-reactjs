@@ -42,7 +42,11 @@ class Body extends Component {
         return (
             <div className="px-xl-5 px-lg-4 px-3 full-height">
                 <Row>{daftarBarang}</Row>
-                <ToastContainer autoClose={1000} />
+                <ToastContainer
+                    autoClose={1000}
+                    pauseOnHover={false}
+                    pauseOnFocusLoss={false}
+                />
             </div>
         );
     }
