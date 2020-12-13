@@ -5,6 +5,12 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-right: 0 !important;
+    overflow: overlay;
+}
+
+.nav, .footer {
+    padding-right: 0 !important;
 }
 
 code {
@@ -123,6 +129,18 @@ code {
 
 .list-keranjang {
     height: 120px;
+}
+
+.btn .badge {
+    position: absolute !important;
+    top: 12px !important;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 11px;
+    text-align: center;
+    padding: 3px !important;
 }
 
 @media (max-width: 576px) {
