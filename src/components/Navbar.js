@@ -3,6 +3,9 @@ import {Navbar, Nav, InputGroup, FormControl, Button, Badge} from "react-bootstr
 import glovoryLogo from "../assets/images/icons/glovory.svg"
 
 class Navigation extends Component {
+    filterBarang = (event) => {
+        this.props.updateQuery(event.target.value);
+    }
     render() {
         return (
             <Navbar
@@ -35,6 +38,8 @@ class Navigation extends Component {
                             aria-label="Search products"
                             aria-describedby="search-products"
                             className="h-auto bg-light border-0"
+                            onChange={this.filterBarang}
+                            value={this.props.query}
                         />
                     </InputGroup>
 

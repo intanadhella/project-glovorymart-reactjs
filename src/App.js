@@ -140,6 +140,7 @@ class App extends Component {
                 },
             ],
             daftarBelanja: [],
+            query: "",
         };
     }
 
@@ -229,15 +230,38 @@ class App extends Component {
         }
     };
 
+    updateQuery = (newQuery) => {
+        this.setState({
+            query: newQuery,
+        });
+    };
+
+    filteredBarang = () => {
+        const result = this.state.daftarBarang.filter((barang) => {
+            if (
+                barang.namaBarang
+                    .toLowerCase()
+                    .includes(this.state.query.toLowerCase())
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        return result;
+    };
+
     render() {
         return (
             <div>
                 <Navigation
                     handleShow={this.handleShow}
                     countKeranjang={this.countKeranjang}
+                    query={this.state.query}
+                    updateQuery={this.updateQuery}
                 />
                 <Body
-                    daftarBarang={this.state.daftarBarang}
+                    daftarBarang={this.filteredBarang()}
                     addToCart={this.addToCart}
                 />
                 <Footer />
